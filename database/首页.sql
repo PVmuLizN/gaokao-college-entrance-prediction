@@ -1,7 +1,8 @@
 CREATE TABLE major (
-    id INT PRIMARY KEY,   name VARCHAR(255) NOT NULL
+    id INT PRIMARY KEY,
+    maj_name VARCHAR(255) NOT NULL,
+    maj_number VARCHAR(10) not null
 );
-
 CREATE TABLE enrollment (
     id INT PRIMARY KEY,
     major_id INT NOT NULL,
@@ -9,7 +10,6 @@ CREATE TABLE enrollment (
     enrollment_num INT NOT NULL,
     FOREIGN KEY (major_id) REFERENCES major(id)
 );
-
 CREATE TABLE employment (
     id INT PRIMARY KEY,
     major_id INT NOT NULL,
@@ -17,12 +17,10 @@ CREATE TABLE employment (
     employment_rate FLOAT NOT NULL,
     FOREIGN KEY (major_id) REFERENCES major(id)
 );
-
 CREATE TABLE province (
     id INT PRIMARY KEY,
     name VARCHAR(255) NOT NULL
 );
-
 CREATE TABLE university (
     id INT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -30,8 +28,4 @@ CREATE TABLE university (
     ranking INT NOT NULL,
     FOREIGN KEY (province_id) REFERENCES province(id)
 );
-
-CREATE TABLE policies (
-    id INT PRIMARY KEY,
-    data JSON NOT NULL
-)
+CREATE TABLE policies (id INT PRIMARY KEY, data JSON NOT NULL)
