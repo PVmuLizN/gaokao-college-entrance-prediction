@@ -1,5 +1,5 @@
 CREATE TABLE major (
-    id INT PRIMARY KEY,\n    name VARCHAR(255) NOT NULL
+    id INT PRIMARY KEY,   name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE enrollment (
