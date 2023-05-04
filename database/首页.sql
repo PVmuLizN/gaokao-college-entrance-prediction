@@ -1,7 +1,7 @@
 CREATE TABLE major (
     id INT PRIMARY KEY,
-    maj_name VARCHAR(255) NOT NULL,
-    maj_number VARCHAR(10) not null
+    major_name VARCHAR(255) NOT NULL,
+    major_number VARCHAR(10) not null
 );
 CREATE TABLE enrollment (
     id INT PRIMARY KEY,
@@ -14,7 +14,7 @@ CREATE TABLE employment (
     id INT PRIMARY KEY,
     major_id INT NOT NULL,
     employment_year INT NOT NULL,
-    employment_rate FLOAT NOT NULL,
+    employment_rate DECIMAL(5,2) NOT NULL,
     FOREIGN KEY (major_id) REFERENCES major(id)
 );
 CREATE TABLE province (
